@@ -1,0 +1,19 @@
+name: Build the project with gradle-build-action
+
+on:
+  workflow_dispatch:
+  push:
+
+env:
+  GRADLE_BUILD_ACTION_CACHE_DEBUG_ENABLED: true
+
+jobs:
+  run-gradle-build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout sources
+      uses: actions/checkout@v3
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
+    - name: Build project
+      run: ./gradlew build
