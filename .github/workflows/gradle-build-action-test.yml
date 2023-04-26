@@ -17,3 +17,5 @@ jobs:
       uses: gradle/gradle-build-action@v2
     - name: Build project
       run: ./gradlew build
+    - name: Print variable
+      run: echo "variable '${{ vars.TEST_VAR }}'"
