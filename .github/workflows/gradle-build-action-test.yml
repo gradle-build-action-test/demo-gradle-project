@@ -14,8 +14,8 @@ jobs:
     - name: Checkout sources
       uses: actions/checkout@v3
     - name: Setup Gradle
-      uses: gradle/gradle-build-action@v2
-    - name: Build project
-      run: ./gradlew build
+      uses: gradle/gradle-build-action@dd/config-variables
     - name: Print variable
-      run: echo "variable '${{ vars.TEST_VAR }}'"
+      run: echo "variable '${{ vars.GRADLE_VERSION }}'"
+    - name: Print Gradle version
+      run: gradle -v
